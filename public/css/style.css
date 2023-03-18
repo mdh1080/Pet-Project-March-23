@@ -1,0 +1,157 @@
+
+.navbar-header {
+    position:static;
+    background-color: rgb(225, 222, 222);
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20;
+    display: inline-flex;
+    justify-content: space-between;
+    font-family: 'Crimson Pro', serif;
+    color: white;
+    font-size: 16px;
+    /* font-weight: 800px; */
+    letter-spacing: 5px;
+  } 
+
+  .navbar.navbar-inverse {
+    background-color: white;
+    border-color: white;
+  }
+  
+  body {
+    font-family: 'Crimson Pro', serif;
+    font-size: 18px;
+    background-color:white;
+    font-size: 16px;
+    line-height: 1;
+    margin-top: 20px;
+  }
+  /* find a furry friend text*/
+  h1 {
+      font-size: 45px;
+      font-weight: 200;
+      text-align: top-left;
+      position: relative;
+      /* font-color: rgb(240, 19, 19); */
+      /* background-color: white; */
+    
+  } 
+
+  /* adoption page for cats and dogs */
+  h2 {
+    font-size: 20px;
+    font-weight: 200;
+    margin-top: 40px;
+    text-align: top-center;
+    position: relative;
+    /* font-color: rgb(240, 19, 19); */
+    /* background-color: white; */
+  }
+
+  /* #weather-header {
+    text-decoration: underline;
+    background-color: white;
+  } */
+  
+.img-fluid {
+    width: 100%;
+}
+  /* #icon-bg {
+    background-color: grey;
+    width: 50px;
+  } */
+  
+  .hide {
+    display: none;
+  }
+
+  .carousel-inner img {
+    object-fit: contain;
+    object-position: center;
+    height: 50vh;
+   
+  }
+
+  .carousel-item {
+    display: inline-block
+  }
+  
+  
+  #parkSelector {
+      margin-left: 90px;
+      padding-top: 50px;
+  }
+/*   
+  #userSelections {
+      background-color: white;
+      height: 250px;
+      padding-right: 50px;
+  }   */
+  
+  .login-card {
+    margin: 0px;
+    margin-left: 60px;
+    text-align: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 5px;
+    border: 3px solid var(--dark);
+    border-radius: var(--border-radius);
+    border-style: double;
+    border-width: thick;
+    background-color: rgb(225, 222, 222);;
+    color: var(--light);
+  }
+  
+  .card header {
+    color: var(--light);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    background-color: var(--tertiary);
+    padding: 0.625rem;
+    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  }
+  
+  .card-body {
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: bold;
+  } */
+
+  .btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 100%;
+    transition: color 0.1s;
+    margin-left: 16px;
+  }
+
+
+  #donations {
+    margin: 0px;
+    text-align: center;
+    margin-left: 60px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 5px;
+    flex-direction: row;
+    color: var(--light);
+    font-size: 10px;
+  }
+
+
+  #contact {
+    
+    margin: 0px;
+    margin-left: 60px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 5px;
+    color: var(--light);
+  }
