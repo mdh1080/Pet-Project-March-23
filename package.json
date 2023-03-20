@@ -1,5 +1,5 @@
 {
-    "name": "Pet-Project-March-23",
+    "name": "pet-project-march-23",
     "version": "1.0.0",
     "description": "pet project- group project January 2023",
     "main": "server.js",
@@ -29,6 +29,7 @@
         "multer": "^1.4.5-lts.1",
         "mysql": "^2.18.1",
         "mysql2": "^2.3.3",
-        "sequelize": "^6.28.0"
+        "sequelize": "^6.28.0",
+        "sql": "^0.78.0"
     }
 }
