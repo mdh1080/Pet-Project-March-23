@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Pet Post:</h3>
+
+    <form class="form new-postpet-form">
+      <div class="form-group">
+        <label for="postpet-name">postpet name:</label>
+        <input class="form-input" type="text" id="postpet-name" name="postpet-name" />
+      </div>
+      <div class="form-group">
+        <label for="postpet-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="postpet-funding" name="postpet-funding" />
+      </div>
+      <div class="form-group">
+        <label for="postpet-desc">description:</label>
+        <textarea class="form-input" id="postpet-desc" name="postpet-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if postpets.length}}
+  <div class="col-md-6 postpet-list">
+    <h3>Current Available Pets:</h3>
+
+    {{#each postpets as |postpet|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/postpet/{{postpet.id}}">{{postpet.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{postpet.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
