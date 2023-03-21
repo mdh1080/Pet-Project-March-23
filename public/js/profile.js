@@ -1,14 +1,16 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#postpet-name').value.trim();
-    const needed_funding = document.querySelector('#postpet-funding').value.trim();
+    const title = document.querySelector('#postpet-title').value.trim();
+    const date = document.querySelector('#postpet-date_created').value.trim();
     const description = document.querySelector('#postpet-desc').value.trim();
+    const image = document.querySelector('#postpet-image').value.trim();
+    const contact = document.querySelector('#postpet-user_id').value.trim();
   
-    if (name && needed_funding && description) {
+    if (title && date && description && image && contact) {
       const response = await fetch(`/api/postpets`, {
         method: 'POST',
-        body: JSON.stringify({ name, needed_funding, description }),
+        body: JSON.stringify({ title, date, description, image, contact }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -39,10 +41,10 @@ const newFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.new-postpet-form')
+    .querySelector('.new-profile-form')
     .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.postpet-list')
+    .querySelector('.profile-list')
     .addEventListener('click', delButtonHandler);
   

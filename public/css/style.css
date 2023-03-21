@@ -39,8 +39,19 @@
     
   } 
 
-  /* adoption page for cats and animals */
+  /* adoption page for cats and  */
   h2 {
+    font-size: 20px;
+    font-weight: 200;
+    margin-top: 40px;
+    margin-left: 20px;
+    text-align: top-left;
+    position: relative;
+    /* font-color: rgb(240, 19, 19); */
+    /* background-color: white; */
+  }
+
+  h3 {
     font-size: 20px;
     font-weight: 200;
     margin-top: 40px;
@@ -48,6 +59,21 @@
     position: relative;
     /* font-color: rgb(240, 19, 19); */
     /* background-color: white; */
+  }
+
+  .no-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #1b89bc;
+    text-decoration: none;
+    font-size: 100%;
+  }
+  
+  .no-button:hover {
+    color: #065b83;
+    text-decoration: underline;
   }
 
   /* #weather-header {

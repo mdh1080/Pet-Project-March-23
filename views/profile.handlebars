@@ -1,25 +1,36 @@
 <div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+  <div class="col-md-5">
+ 
   </div>
 </div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Pet Post:</h3>
+<div class="container text-center">    
+  <div class= "row justify-space-between-md" id="">
+    <h2>Welcome, {{name}}!</h2>
+    <div class="col-md-5 well">
+    
+      
+    <h3>Create a New Post:</h3>
 
     <form class="form new-postpet-form">
       <div class="form-group">
-        <label for="postpet-name">postpet name:</label>
+        <label for="postpet-name">Title:</label>
         <input class="form-input" type="text" id="postpet-name" name="postpet-name" />
       </div>
       <div class="form-group">
-        <label for="postpet-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="postpet-funding" name="postpet-funding" />
+        <label for="postpet-date_created">Posting Date:</label>
+        <input class="form-input" type="date" id="postpet-date_created" name="postpet-date_created" />
       </div>
       <div class="form-group">
-        <label for="postpet-desc">description:</label>
+        <label for="postpet-desc">Description:</label>
         <textarea class="form-input" id="postpet-desc" name="postpet-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="postpet-image">Image:</label>
+        <img class="form-input" id="postpet-image" name="postpet-image"></img>
+      </div>
+      <div class="form-group">
+        <label for="postpet-user_id">Contact:</label>
+        <textarea class="form-input" id="postpet-user_id" name="postpet-user_id"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -29,12 +40,12 @@
 
   {{#if postpets.length}}
   <div class="col-md-6 postpet-list">
-    <h3>Current Available Pets:</h3>
+    <h3>Current Posts:</h3>
 
     {{#each postpets as |postpet|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/postpet/{{postpet.id}}">{{postpet.name}}</a></h4>
+        <h4><a href="/animals/{{postpet.id}}">{{postpet.title}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{postpet.id}}">DELETE</button>

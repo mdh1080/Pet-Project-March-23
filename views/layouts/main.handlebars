@@ -12,9 +12,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro" rel="stylesheet">
     <title>Find A Furry Friend</title>
 </head>
+
 <body>
+ <header>
+    <nav class="navbar navbar-inverse">
+     <div class="container-fluid">
+       <div class="navbar-header"> 
+              
+          <h1>
+            <a href ="/">Find a Furry Friend</a>
+          </h1>
 
-{{{body}}}
+          <h2> Giving Loving Homes to Animals in Need </h2>
+          
 
+              <ul>
+                {{!-- <li>
+                 <a href="/cats" target="_blank">Cats</a>
+               </li> --}}
+                <li>
+                 <a href="/animals"> Post a Pet</a>
+               </li>
+               <li>
+                <a href="#contact">Contact</a>
+               </li>
+                <li>
+                <a href="/login">Login</a>
+               </li>
+               <li>
+                <a href="/profile">Profile</a>
+               </li>
+              </ul>
+        </div>
+    </nav> 
+   
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{/if}}
+  
+    </header>
+    {{!-- <main class="container container-fluid mt-5"> --}}
+    
+      {{{ body }}}
+
+    </main>
+    <footer>
+      
+    </footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
+
 </html>
