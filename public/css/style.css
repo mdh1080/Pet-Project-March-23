@@ -61,6 +61,12 @@
     /* background-color: white; */
   }
 
+  .logout {
+    text-align: right;
+    margin-right: 30px;
+    padding-bottom: 10px;
+  }
+
   .no-button {
     background: none;
     border: none;

@@ -2,6 +2,16 @@ const router = require('express').Router();
 const { PostPet } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+router.get('/', withAuth, async (req, res) => {
+  try {
+    const postpetData = await PostPet.findAll();
+    const postpets = postpetData.map((postpet) => postpet.get({ plain: true }));
+    res.render('postpet', { postpets });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPostPet = await PostPet.create({

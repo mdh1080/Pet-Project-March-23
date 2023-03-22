@@ -27,11 +27,8 @@
           
 
               <ul>
-                {{!-- <li>
-                 <a href="/cats" target="_blank">Cats</a>
-               </li> --}}
                 <li>
-                 <a href="/animals"> Post a Pet</a>
+                 <a href="/postpet"> Post a Pet</a>
                </li>
                <li>
                 <a href="#contact">Contact</a>
@@ -47,10 +44,12 @@
     </nav> 
    
         <!-- Conditionally render login or logout links -->
+        <div class = "logout">
         {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
         {{/if}}
+        </div>
   
     </header>
     {{!-- <main class="container container-fluid mt-5"> --}}
