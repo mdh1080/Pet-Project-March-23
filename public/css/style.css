@@ -82,6 +82,10 @@
     text-decoration: underline;
   }
 
+  .text-center {
+    text-align: center !important;
+  }
+
   /* #weather-header {
     text-decoration: underline;
     background-color: white;

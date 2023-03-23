@@ -1,14 +1,3 @@
-// const apiRoutes = require('./api');
-
-// const router = require('express').Router();
-
-// router.use('/api', apiRoutes);
-
-// router.get('/homepage', (req, res) => {res.render('homepage')
-// });
-
-
-// module.exports = router;
 
 const router = require('express').Router();
 
