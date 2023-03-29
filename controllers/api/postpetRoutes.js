@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { PostPet } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
 router.get('/', withAuth, async (req, res) => {
   try {
     const postpetData = await PostPet.findAll();
@@ -44,6 +45,46 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/edit/:id', withAuth, async (req, res) => {
+  try {
+    const postpetData = await PostPet.findByPk(req.params.id);
+
+    if (!postpetData) {
+      res.status(404).json({ message: 'No postpet found with this id!' });
+      return;
+    }
+
+    const postpet = postpetData.get({ plain: true });
+
+    res.render('edit-postpet', {
+      ...postpet,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put('/edit/:id', withAuth, async (req, res) => {
+  try {
+    const postpetData = await PostPet.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!postpetData) {
+      res.status(404).json({ message: 'No postpet found with this id!' });
+      return;
+    }
+
+    res.status(200).json(postpetData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 // const router = require('express').Router();
 // const Sequelize = require('sequelize');
@@ -98,13 +139,14 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 
 
+function uploadFiles(req, res) {
+    console.log(req.body);
+    console.log(req.files);
+    res.json({ message: "Successfully uploaded files" });
+}
 
-// app.post("/upload_files", upload.array("files"), uploadFiles);
+          
 
-// function uploadFiles(req, res) {
-//     console.log(req.body);
-//     console.log(req.files);
-//     res.json({ message: "Successfully uploaded files" });
-// }
+
 
 module.exports = router;
