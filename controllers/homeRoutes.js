@@ -66,7 +66,7 @@ router.get('/postpets', async (req, res) => {
     res.render('postpets', {
       postpets: postpets,
       logged_in: req.session.logged_in
-      
+
     });
   } catch (err) {
     res.status(500).json(err);
@@ -103,10 +103,10 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/megan', (req, res) => {
+router.get('/contact', (req, res) => {
 
 
-  res.render('megan', {
+  res.render('contact', {
      postpet: {description: 'A really funny dog'}
   });
 });

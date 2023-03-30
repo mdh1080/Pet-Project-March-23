@@ -7,34 +7,44 @@
   <div class="row" id="userSelections">
     <div class="col-md-3 well">
 
-
-{{!-- Sign up or login button --}}
 <div class="well">
-          <a href="/login" target="blank" class="btn btn-primary btn-block">Sign Up</a>
+  <a href="/postpets" class="btn btn-primary btn-block">Adopt a Pet</a>
+</div>
+
+<div class="well">
+  <a href="/profile" class="btn btn-primary btn-block">Give a Pet</a>
+</div>
+
+{{!-- Sign up button --}}
+<div class="well">
+          <a href="/login"  class="btn btn-primary btn-block">Sign Up</a>
        </div> 
 
-  <!-- Submit button -->
+  <!-- Login button -->
 <div class="well">
-  <a href="/contact" target="blank" class="btn btn-primary btn-block">Contact</a>
+  <a href="/login" class="btn btn-primary btn-block">Login</a>
 </div>     
 
 <div class="well">
-<a href="https://twitter.com/ASPCA?s=20&t=_Ctw3NdFHwd6DjIbdUuQLA" class="aspca-follow-button btn-block" data-show-count="false">Follow @ASPCA</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
+ <a href="/contact" class="btn btn-primary btn-block">Contact</a>
 </div> 
 
-<div class="well">
+{{!-- <div class="well">
   <div id="donations" class="card">
   <p style="font-size: 16px">
   Please mail or drop off donations at:
   <br>4005 River Run Drive, Greensboro, NC 27504</br>
   Thank you for your support!</p>
   </div>
-</div>
+</div> --}}
   <div class="well">
   <div id="contact" class="card">
-  <p style="font-size: 16px">Contact Information<br>
-      Email: furrypets@gmail.com
-      Phone: 919.555.2244 </p>
+  <p style="font-size: 16px">
+    FFF, Inc.<br>
+    55 Furry Friends Drive<br>
+    Cary, NC 28801<br>
+    furrypets@gmail.com
+    (919)555-2244 </p>
   </div>
 </div>
 
@@ -81,7 +91,7 @@
   <div class="col-md-12">
     <div class="well" id="animals">
       <h4 id="adoptable-animals"></h4>
-      <a href="/postpet"> 
+      <a href="/postpets"> 
       <img src="https://images.pexels.com/photos/156934/pexels-photo-156934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="img-fluid" alt="cat image">
       </a>
       <p id="animal-name"></p>
