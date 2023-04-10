@@ -1,11 +1,13 @@
 const router = require('express').Router();
 const { PostPet } = require('../../models');
 const withAuth = require('../../utils/auth');
+const { User } = require('../../models');
 
 
 router.get('/', withAuth, async (req, res) => {
   try {
     const postpetData = await PostPet.findAll();
+    
     const postpets = postpetData.map((postpet) => postpet.get({ plain: true }));
     res.render('postpet', { postpets });
   } catch (err) {
@@ -112,18 +114,18 @@ router.put('/edit/:id', withAuth, async (req, res) => {
 //     });
 // });
 
-// router.post("/", (req, res) => {
-//     postpet.create({
-//         name: req.body.name,
-//         description: req.body.description,
-//         image: req.body.image,
-//     })
-//     .then((postpet) => res.json(postpet))
-//     .catch((err) => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
+router.post("/", (req, res) => {
+    postpet.create({
+        name: req.body.name,
+        description: req.body.description,
+        image: req.body.image,
+    })
+    .then((postpet) => res.json(postpet))
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 // router.post("/comment", (req, res) => {
 //     Comment.create({

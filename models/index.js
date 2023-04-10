@@ -21,5 +21,9 @@ PostPet.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
+// User.belongsTo(PostPet, {
+//     foreignKey: 'user_name',
+// });
+
 module.exports = { User, PostPet, Comment };
 

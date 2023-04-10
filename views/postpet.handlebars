@@ -1,21 +1,16 @@
 
 <html>
 <!-- Loop over each object in the postpets array -->
-{{!-- {{#each postpets as |postpet| }}
+{{#each postpets as |postpet| }}
 <div class="row mb-4 postpet">
   <div class="col-md-5">
     <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
+
       <a href="/postpet/{{postpet.id}}">{{postpet.title}}</a>
     </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      {{!-- <span class="dollar-amount">{{ postpet.needed}}</span>
-      needed! --}}
-    {{!-- </p>
-    <p>Created by {{postpet.user.name}} on {{format_date postpet.date_created}}</p>
+   
+    </p>
+    <p>Created by {{name}} on {{format_date postpet.date_created}}</p>
   </div>
   <div class="col-md-7">
     <p>
@@ -23,7 +18,7 @@
     </p>
   </div>
 </div>
-{{/each}} --}}
+{{/each}}
 
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -54,10 +49,13 @@
     <p>
      {{postpet.description}}
     </p>
-    <p>Created by {{postpet.user.name}} on {{format_date postpet.date_created}}</p>
+    <p>Created by {{name}} on {{format_date postpet.date_created}}</p>
   </div>
   </div>
 </div>
 {{/each}}
 </body>
 </html>
+
+<script src="./js/profile.js"></script>
+

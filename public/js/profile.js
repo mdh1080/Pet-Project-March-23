@@ -2,15 +2,15 @@ const newFormHandler = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('#postpet-title').value.trim();
-    const date = document.querySelector('#postpet-date_created').value.trim();
+    // const date = document.querySelector('#postpet-date_created').value.trim();
     const description = document.querySelector('#postpet-desc').value.trim();
     // const image = document.querySelector('#postpet-image').value.trim();
     // const contact = document.querySelector('#postpet-user_id').value.trim();
   
-    if (title && date && description) {
+    if (title && description) {
       const response = await fetch(`/api/postpets`, {
         method: 'POST',
-        body: JSON.stringify({ title, date, description}),
+        body: JSON.stringify({ title, description}),
         headers: {
           'Content-Type': 'application/json',
         },

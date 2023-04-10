@@ -4,15 +4,16 @@
     <div class="form-group">
       <div class="col-md-5">
     <h2>
-      <a href="/postpets/{{postpet.id}}">{{postpet.title}}</a>
+      <a href="/postpet/{{postpet.id}}">{{postpet.title}}</a>
     </h2>
     
     <p>
      {{postpet.description}}
     </p>
-    {{!-- <p>Created by {{postpet.user.name}} on {{format_date postpet.date_created}}</p>  --}}
+    <p>Created by {{name}} on {{format_date postpet.date_created}}</p> 
   </div>
   </div>
 </div>
 {{/each}}
 
+<script src ="./js/profile.js"></script>

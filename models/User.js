@@ -18,6 +18,8 @@ User.init(
         },
         name: {
             type: DataTypes.STRING,
+            // index: true,
+            // uniqueKey: true,
             allowNull: false,
         },
         email: {
