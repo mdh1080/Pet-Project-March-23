@@ -87,33 +87,6 @@ router.put('/edit/:id', withAuth, async (req, res) => {
   }
 });
 
-
-// const router = require('express').Router();
-// const Sequelize = require('sequelize');
-// const postpet = require("../../models/PostPet");
-// const Comment = require("../../models/Comment");
-
-
-// router.get("/", (req, res) => {
-//     postpet.findAll({
-//         attributes: [
-//             "title",
-//             "description",
-//             "date_created",
-//             "image",
-//             "user_id",
-//         ],
-//         include: [
-//             {model: Comment, attributes: ["user_comment", "user_id"]},
-//         ],
-//     })
-    
-//     .catch((err) => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
-
 router.post("/", (req, res) => {
     postpet.create({
         name: req.body.name,
@@ -126,19 +99,6 @@ router.post("/", (req, res) => {
         res.status(500).json(err);
     });
 });
-
-// router.post("/comment", (req, res) => {
-//     Comment.create({
-//         comment_text: req.body.comment_text, 
-//         name: req.body.name,
-//     })
-//         .then((comment) => res.json(comment))
-//         .catch((err) => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
-
 
 
 function uploadFiles(req, res) {
