@@ -34,9 +34,8 @@
       font-weight: 200;
       text-align: top-left;
       position: relative;
-      /* font-color: rgb(240, 19, 19); */
+      /* color:#1b89bc; */
       /* background-color: white; */
-    
   } 
 
   /* adoption page for cats and  */
@@ -84,6 +83,7 @@
 
   .text-center {
     text-align: center !important;
+    color: #0a4e6d;
   }
 
   /* #weather-header {

@@ -32,6 +32,8 @@ router.get('/postpet/:id', async (req, res) => {
     const postpetData = await PostPet.findByPk(req.params.id, {
       include: [
         {
+          model: PostPet,
+          attributes: ['title', 'description', 'date_created'],
           model: User,
           attributes: ['name'],
         },

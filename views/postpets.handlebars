@@ -1,8 +1,12 @@
+<div>
+  <h1 class="text-center">Pets for Adoption</h1>
+</div>
 
 {{#each postpets as |postpet| }}
  <form class="form new-postpet-form">
-    <div class="form-group">
-      <div class="col-md-5">
+  <div class="form-group">
+    <div class="col-md-6">
+    
     <h2>
       <a href="/postpet/{{postpet.id}}">{{postpet.title}}</a>
     </h2>
@@ -10,7 +14,7 @@
     <p>
      {{postpet.description}}
     </p>
-    <p>Created by {{name}} on {{format_date postpet.date_created}}</p> 
+    <p>Created on {{format_date postpet.date_created}}</p> 
   </div>
   </div>
 </div>

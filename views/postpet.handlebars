@@ -1,16 +1,13 @@
 
-<html>
-<!-- Loop over each object in the postpets array -->
 {{#each postpets as |postpet| }}
 <div class="row mb-4 postpet">
   <div class="col-md-5">
     <h2>
-
-      <a href="/postpet/{{postpet.id}}">{{postpet.title}}</a>
+      <p>{{postpet.title}}</p>
     </h2>
    
     </p>
-    <p>Created by {{name}} on {{format_date postpet.date_created}}</p>
+    <p>Created on {{format_date postpet.date_created}}</p>
   </div>
   <div class="col-md-7">
     <p>
@@ -20,8 +17,8 @@
 </div>
 {{/each}}
 
-<link rel="stylesheet" type="text/css" href="./css/style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+{{!-- <link rel="stylesheet" type="text/css" href="./css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
 
   
   <div class="container">
@@ -49,13 +46,13 @@
     <p>
      {{postpet.description}}
     </p>
-    <p>Created by {{name}} on {{format_date postpet.date_created}}</p>
+    <p>Created on {{format_date postpet.date_created}}</p>
   </div>
   </div>
 </div>
 {{/each}}
 </body>
-</html>
+
 
 <script src="./js/profile.js"></script>
 
