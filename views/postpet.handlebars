@@ -1,57 +1,17 @@
 
-{{#each postpets as |postpet| }}
-<div class="row mb-4 postpet">
-  <div class="col-md-5">
-    <h2>
-      <p>{{postpet.title}}</p>
-    </h2>
-   
-    </p>
-    <p>Created on {{format_date postpet.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{postpet.description}}
-    </p>
-  </div>
-</div>
-{{/each}}
 
-{{!-- <link rel="stylesheet" type="text/css" href="./css/style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
-
-  
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="text-center">Adopt a Pet</h1>
+    {{#each postpets as |postpet|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/postpet/{{postpet.id}}">{{postpet.title}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{postpet.id}}">DELETE</button>
+      </div>
     </div>
-  </div>
+    {{/each}}
+</div> 
 
-    <div class="well">
-  <form method="POST" action="/upload" enctype="multipart/form-data">
-        <input type="file" name="image">
-        <input type="submit">
-   </form>
-</div>
-<body>
-{{#each postpets as |postpet| }}
- <form class="form new-postpet-form">
-    <div class="form-group">
-      <div class="col-md-5">
-    <h2>
-      <a href="/postpet/{{postpet.id}}">{{postpet.title}}</a>
-    </h2>
-    
-    <p>
-     {{postpet.description}}
-    </p>
-    <p>Created on {{format_date postpet.date_created}}</p>
-  </div>
-  </div>
-</div>
-{{/each}}
-</body>
 
 
 <script src="./js/profile.js"></script>

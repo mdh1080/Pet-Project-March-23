@@ -32,8 +32,6 @@ router.get('/postpet/:id', async (req, res) => {
     const postpetData = await PostPet.findByPk(req.params.id, {
       include: [
         {
-          model: PostPet,
-          attributes: ['title', 'description', 'date_created'],
           model: User,
           attributes: ['name'],
         },
@@ -57,13 +55,6 @@ router.get('/postpets', async (req, res) => {
     });
 
     const postpets = postpetData.map(postpetData => postpetData.get({plain: true}));
-
-// const brettstestdata = [
-//     {id: 3, title: "Hello", description: "red"},
-//     {id: 12, title: "Hi", description: "blue"},
-//     {id: 10, title: "Goodbye", description: "funny"},
-// ];
-
 
     res.render('postpets', {
       postpets: postpets,
