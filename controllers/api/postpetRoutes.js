@@ -100,6 +100,15 @@ router.post("/", (req, res) => {
     });
 });
 
+router.get("/", (req, res) => {
+    postpet.findAll()
+    .then((postpet) => res.json(postpet))
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 
 function uploadFiles(req, res) {
     console.log(req.body);
