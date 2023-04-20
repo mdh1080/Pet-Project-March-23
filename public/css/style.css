@@ -19,6 +19,10 @@
     background-color: white;
     border-color: white;
   }
+
+  .panel {
+    background-color: rgb(225, 222, 222) !important;
+  }
   
   body {
     font-family: 'Crimson Pro', serif;

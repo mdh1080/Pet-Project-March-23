@@ -1,18 +1,18 @@
 
 
     {{#each postpets as |postpet|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
+  <img class="img-responsive" src="{{postpet.image}}" alt="postpet image" width="80" height="80" />
+      </div>
+      <div class="col-md-6">
         <h4><a href="/postpet/{{postpet.id}}">{{postpet.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{postpet.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{postpet.id}}"</button>
+</div> 
+    </div>
       </div>
     </div>
     {{/each}}
-</div> 
-
-
 
 <script src="./js/profile.js"></script>
 

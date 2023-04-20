@@ -1,3 +1,4 @@
+<body> 
 <div class="row">
   <div class="col-md-5">
  
@@ -16,19 +17,23 @@
         <label for="postpet-title">Title:</label>
         <input class="form-input" type="text" id="postpet-title" name="postpet-title" />
       </div>
+
       <div class="form-group">
         <label for="postpet-desc">Description:</label>
         <textarea class="form-input" id="postpet-desc" name="postpet-desc"></textarea>
       </div>
+
       <div class="form-group">
         <label for="postpet-image">Image:</label>
-        <img class="form-input" id="postpet-image" name="postpet-image"></img>
+        <img class="form-input" id="postpet-image" name="postpet-image"/>
             <div class="well">
-        <method="POST" action="/upload" enctype="multipart/form-data">
-        <input type="file" name="image" value="Upload">
-        <input type="submit" value="Upload">
+              {{!-- <method="POST" action="/upload" enctype="multipart/form-data"> --}}
+              <input type="file" id="imageUpload" name="image" value="Upload">
+              {{!-- <input type="submit" value="Upload"> --}}
+            </div>
       </div>
-      </div>
+
+
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
@@ -40,12 +45,21 @@
     <h3>Current Posts:</h3>
 
     {{#each postpets as |postpet|}}
+    <div class="well">
+    <div class="panel-well">
+      
+
     <div class="row mb-2">
-      <div class="col-md-8">
+      <div class="col-md-2">
+        <img class="img-responsive" src="{{postpet.image}}" alt="postpet image" width="80" height="80" />
+      </div>
+      <div class="col-md-6">
         <h4><a href="/postpet/{{postpet.id}}">{{postpet.title}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{postpet.id}}">DELETE</button>
+      </div>
+    </div>
       </div>
     </div>
     {{/each}}
@@ -54,3 +68,6 @@
 </div> 
 
 <script src="./js/profile.js"></script>
+<script src="./utils/upload_files.js"></script>
+
+</body>

@@ -6,12 +6,13 @@
  <form class="form new-postpet-form">
   <div class="form-group">
     <div class="col-md-6">
-    
+    <div class="well">
+      
     <h2>
       <a href="/postpet/{{postpet.id}}">{{postpet.title}}</a>
     </h2>
-    
     <p>
+          <img class="img-responsive" src="{{postpet.image}}" alt="postpet image" width="80" height="80" />
      {{postpet.description}}
     </p>
     <p>Created on {{format_date postpet.date_created}}</p> 
