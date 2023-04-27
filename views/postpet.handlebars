@@ -1,18 +1,40 @@
+Hello {{user.name}}!
+
+<body> 
+    <form class="form new-postpet-form">
+      <div class="form-group">
+        <label for="postpet-title">Title:</label>
+        <input class="form-input" type="text" id="postpet-title" name="postpet-title" value="{{postpet.title}}">
+      </div>
+
+      <div class="form-group">
+        <label for="postpet-desc">Description:</label>
+        <textarea class="form-input" id="postpet-desc" name="postpet-desc"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="postpet-contact">Call this number:</label>
+        <input class="form-input" type="tel" id="postpet-contact" name="postpet-contact"/>
+      </div>
+
+      <div class="form-group">
+        <label for="postpet-image">Image:</label>
+        <img class="form-input" id="postpet-image" name="postpet-image"/>
+            <div class="well">
+              {{!-- <method="POST" action="/upload" enctype="multipart/form-data"> --}}
+              <input type="file" id="imageUpload" name="image" value="Upload">
+              {{!-- <input type="submit" value="Upload"> --}}
+            </div>
+      </div>
 
 
-    {{#each postpets as |postpet|}}
-  <img class="img-responsive" src="{{postpet.image}}" alt="postpet image" width="80" height="80" />
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
       </div>
-      <div class="col-md-6">
-        <h4><a href="/postpet/{{postpet.id}}">{{postpet.title}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{postpet.id}}"</button>
-</div> 
-    </div>
-      </div>
-    </div>
-    {{/each}}
+    </form>
 
-<script src="./js/profile.js"></script>
+
+{{!-- <script src="./js/profile.js"></script>
+<script src="./utils/upload_files.js"></script> --}}
+</body>  
 

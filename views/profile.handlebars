@@ -12,6 +12,7 @@
       
     <h3>Create a New Post:</h3>
 
+
     <form class="form new-postpet-form">
       <div class="form-group">
         <label for="postpet-title">Title:</label>
@@ -21,6 +22,11 @@
       <div class="form-group">
         <label for="postpet-desc">Description:</label>
         <textarea class="form-input" id="postpet-desc" name="postpet-desc"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="postpet-contact">Call this number:</label>
+        <input class="form-input" type="tel" id="postpet-contact" name="postpet-contact"/>
       </div>
 
       <div class="form-group">
@@ -54,9 +60,12 @@
         <img class="img-responsive" src="{{postpet.image}}" alt="postpet image" width="80" height="80" />
       </div>
       <div class="col-md-6">
-        <h4><a href="/postpet/{{postpet.id}}">{{postpet.title}}</a></h4>
+        <h4>{{postpet.title}} </h4>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-2">
+        <a href="/postpet/{{postpet.id}}" class="btn btn-sm btn-danger" >EDIT</a>
+      </div>
+      <div class="col-md-2">
         <button class="btn btn-sm btn-danger" data-id="{{postpet.id}}">DELETE</button>
       </div>
     </div>
