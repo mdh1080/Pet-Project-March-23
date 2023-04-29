@@ -64,7 +64,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/edit/:id', withAuth, async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const postpetData = await PostPet.findByPk(req.params.id);
 
