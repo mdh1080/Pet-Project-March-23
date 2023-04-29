@@ -1,7 +1,7 @@
-Hello {{user.name}}!
+Hello {{postpet.user.name}}!
 
-<body> 
-    <form class="form new-postpet-form">
+ <body>
+    <form class="form edit-postpet-form">
       <div class="form-group">
         <label for="postpet-title">Title:</label>
         <input class="form-input" type="text" id="postpet-title" name="postpet-title" value="{{postpet.title}}">
@@ -9,17 +9,17 @@ Hello {{user.name}}!
 
       <div class="form-group">
         <label for="postpet-desc">Description:</label>
-        <textarea class="form-input" id="postpet-desc" name="postpet-desc"></textarea>
+        <textarea class="form-input" id="postpet-desc" name="postpet-desc"> {{postpet.description}}</textarea>
       </div>
 
       <div class="form-group">
-        <label for="postpet-contact">Call this number:</label>
-        <input class="form-input" type="tel" id="postpet-contact" name="postpet-contact"/>
+        <label for="postpet-phone">Phone:</label>
+        <input class="form-input" type="tel" id="postpet-phone" name="postpet-phone" value="{{postpet.phone}}"/>
       </div>
 
       <div class="form-group">
         <label for="postpet-image">Image:</label>
-        <img class="form-input" id="postpet-image" name="postpet-image"/>
+        <img class="form-input" id="postpet-image" name="postpet-image" src="{{postpet.image}}" width="80" height="80"/>
             <div class="well">
               {{!-- <method="POST" action="/upload" enctype="multipart/form-data"> --}}
               <input type="file" id="imageUpload" name="image" value="Upload">
@@ -29,12 +29,13 @@ Hello {{user.name}}!
 
 
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary" data-id ="{{postpet.id}}">Edit</button>
       </div>
     </form>
 
 
-{{!-- <script src="./js/profile.js"></script>
-<script src="./utils/upload_files.js"></script> --}}
+<script src="./js/profile.js"></script>
+<script src="./utils/upload_files.js"></script>
 </body>  
 
+ 

@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, UnknownConstraintError } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class PostPet extends Model {}
@@ -26,6 +26,10 @@ PostPet.init(
         image: {
             type: DataTypes.STRING,
         },
+        phone: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -40,7 +44,6 @@ PostPet.init(
         //         key: 'name',
         //     },
         // },
-
     },
 
     {
@@ -50,5 +53,7 @@ PostPet.init(
         modelName: 'postpet',
     }
 );
+
+
 
 module.exports = PostPet;

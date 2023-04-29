@@ -13,8 +13,9 @@
     </h2>
     <p>
           <img class="img-responsive" src="{{postpet.image}}" alt="postpet image" width="80" height="80" />
-     {{postpet.description}}
+     {{postpet.description}} 
     </p>
+     <p> Contact: {{format_phone postpet.phone}}</p> 
     <p>Created on {{format_date postpet.date_created}}</p> 
   </div>
   </div>

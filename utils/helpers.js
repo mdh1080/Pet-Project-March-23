@@ -19,5 +19,11 @@ module.exports = {
         return `<span for="img" aria-label="gear">⚙️</span>`;
       }
     },
+
+format_phone : (phone) => {
+      //  format phone number as (xxx) xxx-xxxx
+      return Number(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+    },
+    
   };
 

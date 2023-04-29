@@ -18,12 +18,13 @@ router.post('/', withAuth, async (req, res) => {
   try {
     console.log(req.body, req.files);
     //if image present ,save it with valid post id and return the image id
-    const { title, description } = req.body;
+    const { title, description, phone } = req.body;
     const image = req.files.find((field) => field.fieldname === 'image');
 
-    console.log('%c %O', 'background:orange,color:white', {
+    console.log({
       title,
       description,
+      phone,
       image,
     });
 
@@ -31,6 +32,7 @@ router.post('/', withAuth, async (req, res) => {
       // ...req.body,
       title,
       description,
+      phone,
       image: '/uploads/' + image.filename,
       user_id: req.session.user_id,
     });
@@ -82,7 +84,8 @@ router.get('/edit/:id', withAuth, async (req, res) => {
   }
 });
 
-router.put('/edit/:id', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
+  console.log("this is working")
   try {
     const postpetData = await PostPet.update(req.body, {
       where: {
@@ -106,6 +109,7 @@ router.post('/', (req, res) => {
     .create({
       name: req.body.name,
       description: req.body.description,
+      // phone: req.body.phone,
       image: req.body.image,
     })
     .then((postpet) => res.json(postpet))

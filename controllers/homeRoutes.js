@@ -39,9 +39,10 @@ router.get('/postpet/:id', async (req, res) => {
     });
 
     const postpet = postpetData.get({ plain: true });
-
+    console.log('hello')
+    console.log(postpet)
     res.render('postpet', {
-      ...postpet,
+      postpet: postpet,
       logged_in: req.session.logged_in
     });
   } catch (err) {
